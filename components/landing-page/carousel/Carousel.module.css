@@ -1,0 +1,25 @@
+@keyframes moveFirst {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translateX(-2280px);
+  }
+}
+
+@keyframes moveSecond {
+  0% {
+    transform: translateX(2280px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.first {
+  animation: moveFirst 40s linear infinite;
+}
+
+.second {
+  animation: moveSecond 40s linear infinite;
+}
