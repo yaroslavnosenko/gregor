@@ -1,4 +1,12 @@
-import { Box, Flex, SimpleGrid, SimpleGridProps, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  SimpleGridProps,
+  Text,
+  Link,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 import styles from "./Carousel.module.css";
 
 const urls = [
@@ -42,9 +50,11 @@ const TextBox = ({ text }: { text: string }) => {
       justify="center"
       p="8"
     >
-      <Text fontSize="4xl" fontWeight="bold" fontFamily="sans">
-        {text}
-      </Text>
+      <Link as={NextLink} href="/m/username">
+        <Text fontSize="4xl" fontWeight="bold" fontFamily="sans">
+          {text}
+        </Text>
+      </Link>
     </Flex>
   );
 };

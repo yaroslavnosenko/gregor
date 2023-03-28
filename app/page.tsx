@@ -1,7 +1,8 @@
 "use client";
 
-import { Carousel, Navigation } from "@/components/landing-page";
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { Navigation } from "@/components/core";
+import { Carousel } from "@/components/landing-page";
 
 export default function Home() {
   return (
