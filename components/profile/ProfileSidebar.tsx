@@ -13,8 +13,8 @@ import { FiFacebook, FiTwitter, FiInstagram } from "react-icons/fi";
 
 export const ProfileSidebar = () => {
   return (
-    <Stack pos="fixed" w="72" h="100vh" top="0" left="0" py="20" px="6" pb="8">
-      <Box py="6">
+    <Stack w="72">
+      <Box pb="8">
         <Avatar
           src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZWx8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60"
           boxSize="20"
@@ -26,7 +26,7 @@ export const ProfileSidebar = () => {
         </Heading>
         <Text opacity="0.5">Model</Text>
       </Box>
-      <Box flex={1}>
+      <Box pb="8">
         <Heading
           fontWeight="500"
           size="xs"

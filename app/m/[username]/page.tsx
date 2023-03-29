@@ -1,6 +1,6 @@
 "use client";
-import { Box } from "@chakra-ui/react";
-import { Navigation } from "@/components/core";
+import { Box, HStack, Stack } from "@chakra-ui/react";
+import { Navigation, PageContainer } from "@/components/core";
 import {
   ProfileGallery,
   ProfileGalleryToolbar,
@@ -9,16 +9,20 @@ import {
 
 const ModelProfile = () => {
   return (
-    <Box pt="20">
+    <>
       <Navigation />
-      <ProfileSidebar />
-      <Box pl="72">
-        <Box px="6">
-          <ProfileGalleryToolbar />
-          <ProfileGallery />
-        </Box>
-      </Box>
-    </Box>
+      <PageContainer>
+        <Stack direction="row" alignItems="start" spacing="6">
+          <Box pos="sticky" top="20">
+            <ProfileSidebar />
+          </Box>
+          <Box pt="20">
+            <ProfileGalleryToolbar />
+            <ProfileGallery />
+          </Box>
+        </Stack>
+      </PageContainer>
+    </>
   );
 };
 
