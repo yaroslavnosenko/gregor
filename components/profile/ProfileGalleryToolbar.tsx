@@ -1,16 +1,11 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { HStack, StackProps, Link } from "@chakra-ui/react";
 
-import { FiDownload, FiEdit2 } from "react-icons/fi";
-
-export const ProfileGalleryToolbar = () => {
+export const ProfileGalleryToolbar = (props: StackProps) => {
   return (
-    <HStack minH="16" spacing={6}>
-      <Button leftIcon={<FiEdit2 />} variant="link" color="chakra-body-text">
-        Edit
-      </Button>
-      <Button leftIcon={<FiDownload />} variant="link" color="chakra-body-text">
-        Download
-      </Button>
+    <HStack py="4" spacing={6} fontWeight="600" {...props}>
+      <Link>Main</Link>
+      <Link>Spring</Link>
+      <Link>Inspiration</Link>
     </HStack>
   );
 };

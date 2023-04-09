@@ -1,4 +1,4 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, BoxProps, Image } from "@chakra-ui/react";
 
 const urls = [
   "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZWx8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60",
@@ -12,16 +12,20 @@ const urls = [
   "https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1vZGVsfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=1200&q=60",
 ];
 
-export const ProfileGallery = () => {
+export interface ProfileGalleryProps extends BoxProps {
+  onSelect: () => void;
+}
+
+export const ProfileGallery = ({ onSelect, ...props }: ProfileGalleryProps) => {
   return (
-    <Box style={{ columnCount: 3 }} columnGap="4">
+    <Box style={{ columnCount: 3 }} columnGap="4" {...props}>
       {urls.map((url) => (
-        <Box key={url} pb="4">
+        <Box onClick={onSelect} key={url} pb="4">
           <Image alt="" src={url} />
         </Box>
       ))}
       {urls.map((url) => (
-        <Box key={url} pb="4">
+        <Box onClick={onSelect} key={url} pb="4">
           <Image alt="" src={url} />
         </Box>
       ))}

@@ -1,27 +1,28 @@
 "use client";
-import { Box, HStack, Stack } from "@chakra-ui/react";
 import { Navigation, PageContainer } from "@/components/core";
 import {
+  MediaView,
   ProfileGallery,
   ProfileGalleryToolbar,
-  ProfileSidebar,
+  ProfileHead,
 } from "@/components/profile";
+import { useState } from "react";
 
 const ModelProfile = () => {
+  const [show, setShow] = useState<boolean>(false);
   return (
     <>
       <Navigation />
       <PageContainer>
-        <Stack direction="row" alignItems="start" spacing="6">
-          <Box pos="sticky" top="20">
-            <ProfileSidebar />
-          </Box>
-          <Box pt="20">
-            <ProfileGalleryToolbar />
-            <ProfileGallery />
-          </Box>
-        </Stack>
+        <ProfileHead py="6" />
+        <ProfileGalleryToolbar
+          mt="6"
+          borderBottomWidth={1}
+          borderColor="gray.100"
+        />
+        <ProfileGallery mt="4" onSelect={() => setShow(true)} />
       </PageContainer>
+      {show && <MediaView onClose={() => setShow(false)} />}
     </>
   );
 };

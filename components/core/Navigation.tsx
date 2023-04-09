@@ -1,34 +1,41 @@
-import { Button, HStack, IconButton, Link, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Container,
+  HStack,
+  IconButton,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 
 import { FiSearch } from "react-icons/fi";
-import { PageContainer } from "@/components/core";
+import { enums } from "@/theme";
 
 export const Navigation = () => {
   return (
     <HStack
       top="0"
       left="0"
-      zIndex={999}
+      zIndex={100}
       pos="fixed"
       w="full"
       justify="space-between"
       backdropFilter="blur(20px)"
       bg="rgba(255,255,255,0.8)"
     >
-      <PageContainer>
-        <HStack justify="space-between" h="16">
+      <Container maxW="full" px="6">
+        <HStack justify="space-between" h={enums.navbarHeight}>
           <HStack spacing="16">
             <Link as={NextLink} href="/" _hover={{ textDecor: "none" }}>
               <Text fontWeight="600" fontSize="xl">
                 Gregor
               </Text>
             </Link>
-            <HStack spacing="6">
+            {/* <HStack spacing="6">
               <Link>Models</Link>
               <Link>Photographers</Link>
               <Link>Agencies</Link>
-            </HStack>
+            </HStack> */}
           </HStack>
           <HStack spacing="8">
             <HStack>
@@ -48,7 +55,7 @@ export const Navigation = () => {
             />
           </HStack>
         </HStack>
-      </PageContainer>
+      </Container>
     </HStack>
   );
 };

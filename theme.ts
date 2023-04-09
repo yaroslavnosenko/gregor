@@ -18,3 +18,7 @@ const custom = {
 };
 
 export const theme = extendTheme(custom);
+
+export const enums = {
+  navbarHeight: 16,
+};
