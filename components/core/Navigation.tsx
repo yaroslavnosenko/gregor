@@ -13,6 +13,7 @@ import { enums } from "@/theme";
 
 export const Navigation = () => {
   return (
+    // @ts-ignore
     <HStack
       top="0"
       left="0"

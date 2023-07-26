@@ -14,6 +14,7 @@ import {
 
 export const ProfileHead = (props: SimpleGridProps) => {
   return (
+    // @ts-ignore
     <SimpleGrid alignItems="center" {...props} columns={2} gap={16}>
       <Box>
         <Heading size="xl" fontFamily="sans">
